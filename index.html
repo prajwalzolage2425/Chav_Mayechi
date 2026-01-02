@@ -798,6 +798,15 @@
         .delay-3 {
             animation-delay: 0.6s;
         }
+        
+        /* New animation classes for additional products */
+        .delay-4 {
+            animation-delay: 0.8s;
+        }
+        
+        .delay-5 {
+            animation-delay: 1.0s;
+        }
     </style>
 </head>
 <body>
@@ -894,7 +903,7 @@
                 </div>
 
                 <!-- Product 4 -->
-                <div class="product-card fade-in delay-1">
+                <div class="product-card fade-in delay-3">
                     <div class="product-image">
                         <img src="Khajur.png" alt="Khajur Laddu">
                     </div>
@@ -907,7 +916,7 @@
                 </div>
 
                 <!-- Product 5 -->
-                <div class="product-card fade-in delay-2">
+                <div class="product-card fade-in delay-4">
                     <div class="product-image">
                         <img src="Besan.png" alt="Besan Laddu">
                     </div>
@@ -916,6 +925,73 @@
                         <p class="product-price">₹500 <span>/kg</span></p>
                         <p class="product-description">Gram flour laddus with ghee and sugar. Traditional favorite with aromatic cardamom flavor.</p>
                         <a href="https://wa.me/918552924273?text=Hi! I'm interested in ordering Besan Laddu" target="_blank" class="order-btn">Order Now</a>
+                    </div>
+                </div>
+
+                <!-- NEW PRODUCTS START HERE -->
+
+                <!-- Product 6 -->
+                <div class="product-card fade-in delay-1">
+                    <div class="product-image">
+                        <img src="Rava.png" alt="Rava Laddu">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Rava Laddu</h3>
+                        <p class="product-price">₹500 <span>/kg</span></p>
+                        <p class="product-description">Semolina laddus with ghee, sugar, and nuts. Light and flavorful, perfect for festive occasions.</p>
+                        <a href="https://wa.me/918552924273?text=Hi! I'm interested in ordering Rava Laddu" target="_blank" class="order-btn">Order Now</a>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="product-card fade-in delay-2">
+                    <div class="product-image">
+                        <img src="Udit.png" alt="Udit Papad">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Udit Papad</h3>
+                        <p class="product-price">₹350 <span>/kg</span></p>
+                        <p class="product-description">Crispy, thin papads made from urad dal. Perfect accompaniment to meals or as a snack.</p>
+                        <a href="https://wa.me/918552924273?text=Hi! I'm interested in ordering Udit Papad" target="_blank" class="order-btn">Order Now</a>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="product-card fade-in delay-3">
+                    <div class="product-image">
+                        <img src="Palak.png" alt="Palak Papad">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Palak Papad</h3>
+                        <p class="product-price">₹300 <span>/kg</span></p>
+                        <p class="product-description">Spinach-infused papads rich in iron and nutrients. A healthy twist to traditional papads.</p>
+                        <a href="https://wa.me/918552924273?text=Hi! I'm interested in ordering Palak Papad" target="_blank" class="order-btn">Order Now</a>
+                    </div>
+                </div>
+
+                <!-- Product 9 -->
+                <div class="product-card fade-in delay-4">
+                    <div class="product-image">
+                        <img src="Kothimbir.png" alt="Kothimbir Papad">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Kothimbir Papad</h3>
+                        <p class="product-price">₹300 <span>/kg</span></p>
+                        <p class="product-description">Coriander flavored papads with aromatic herbs. Adds a fresh, herbal flavor to your meals.</p>
+                        <a href="https://wa.me/918552924273?text=Hi! I'm interested in ordering Kothimbir Papad" target="_blank" class="order-btn">Order Now</a>
+                    </div>
+                </div>
+
+                <!-- Product 10 -->
+                <div class="product-card fade-in delay-5">
+                    <div class="product-image">
+                        <img src="Masala.png" alt="Masala Papad">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Masala Papad</h3>
+                        <p class="product-price">₹300 <span>/kg</span></p>
+                        <p class="product-description">Spicy papads with traditional Indian spices. Adds a flavorful kick to your dining experience.</p>
+                        <a href="https://wa.me/918552924273?text=Hi! I'm interested in ordering Masala Papad" target="_blank" class="order-btn">Order Now</a>
                     </div>
                 </div>
             </div>
@@ -984,7 +1060,7 @@
             </div>
 
             <div class="contact-image fade-in delay-2">
-                <img src="image.png" alt="Contact Chav Mayechi">
+                <img src="last.png" alt="Contact Chav Mayechi">
             </div>
         </div>
     </section>
@@ -1124,7 +1200,7 @@
             img.addEventListener('error', function() {
                 console.log('Image failed to load:', this.src);
                 // If local image fails, use a placeholder
-                if (this.src.includes('Methi_laddu.png') || this.src.includes('Nachani_laddu.png')) {
+                if (this.src.includes('.png')) {
                     this.src = 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80';
                 }
             });
