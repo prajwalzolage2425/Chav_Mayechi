@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chav Mayechi | Homemade Maharashtrian Delights</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;700;800&family=Noto+Sans+Devanagari:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-brown: #8B4513;
+            --secondary-brown: #A0522D;
+            --light-beige: #F5E8D0;
+            --saffron: #FF9933;
+            --gold: #FFB347;
+            --dark-green: #2E8B57;
+            --medium-green: #3CB371;
+            --light-green: #90EE90;
+            --white: #FFFFFF;
+            --off-white: #FFF9F0;
+            --black: #333333;
+            --gray: #666666;
+            --light-gray: #E8E1D5;
+            --shadow: 0 10px 30px rgba(139, 69, 19, 0.15);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--black);
+            background-color: var(--off-white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--primary-brown);
+            line-height: 1.2;
+        }
+
+        .marathi-text {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(139, 69, 19, 0.1);
+            z-index: 1000;
+            padding: 0.8rem 0;
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-brown);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo i {
+            margin-right: 0.5rem;
+            color: var(--saffron);
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary-brown);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--saffron);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--saffron), var(--gold));
+            left: 0;
+            bottom: 0;
+            transition: width 0.4s;
+            border-radius: 2px;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: var(--primary-brown);
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 12rem 2rem 6rem;
+            text-align: center;
+            background: linear-gradient(rgba(245, 232, 208, 0.85), rgba(245, 232, 208, 0.9)), 
+                        url('https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 80%, rgba(255, 153, 51, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(46, 139, 87, 0.15) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(90deg, var(--primary-brown), var(--saffron));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-tagline {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-brown);
+            font-weight: 500;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+            color: var(--gray);
+        }
+
+        .highlight {
+            color: var(--saffron);
+            font-weight: 700;
+            background-color: rgba(255, 153, 51, 0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 5px;
+        }
+
+        .hero-marathi {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--dark-green);
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: rgba(144, 238, 144, 0.2);
+            border-radius: 10px;
+            display: inline-block;
+            border-left: 5px solid var(--dark-green);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--saffron), var(--gold));
+            color: white;
+            padding: 1rem 2.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 2rem;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(255, 153, 51, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 153, 51, 0.4);
+            background: linear-gradient(90deg, var(--gold), var(--saffron));
+        }
+
+        /* Sections Common Styles */
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--saffron), var(--gold));
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .about-text {
+            flex: 1;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .about-image:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            min-height: 400px;
+            transition: transform 0.8s;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.08);
+        }
+
+        .marathi-text-box {
+            font-style: italic;
+            color: var(--dark-green);
+            font-weight: 500;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background-color: rgba(144, 238, 144, 0.2);
+            border-radius: 15px;
+            border-left: 6px solid var(--dark-green);
+            box-shadow: 0 5px 15px rgba(46, 139, 87, 0.1);
+        }
+
+        /* Products Section */
+        .products-section {
+            background-color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .products-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover;
+            opacity: 0.03;
+            z-index: 0;
+        }
+
+        .product-container {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .product-card {
+            background-color: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            border: 1px solid var(--light-gray);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-color: var(--saffron);
+        }
+
+        .product-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+            background-color: #f8f4e9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 70%, rgba(0,0,0,0.1));
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 20px;
+            transition: transform 0.8s;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            padding: 1.8rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-name {
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary-brown);
+            min-height: 3.5rem;
+        }
+
+        .product-price {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--saffron);
+            margin-bottom: 1rem;
+        }
+
+        .product-price span {
+            font-size: 1rem;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        .product-description {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            flex-grow: 1;
+        }
+
+        .order-btn {
+            display: block;
+            width: 100%;
+            background: linear-gradient(90deg, var(--secondary-brown), var(--primary-brown));
+            color: white;
+            text-align: center;
+            padding: 0.8rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .order-btn:hover {
+            background: linear-gradient(90deg, var(--primary-brown), var(--secondary-brown));
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4rem;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .contact-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-item.clickable:hover {
+            background-color: rgba(255, 153, 51, 0.05);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--saffron), var(--gold));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(255, 153, 51, 0.3);
+            flex-shrink: 0;
+        }
+
+        .contact-details h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .contact-details p, .contact-details a {
+            color: var(--secondary-brown);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 1.1rem;
+        }
+
+        .contact-details a:hover {
+            color: var(--saffron);
+        }
+
+        .contact-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .contact-image:hover {
+            transform: translateY(-10px);
+        }
+
+        .contact-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            min-height: 400px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: var(--white);
+            border-radius: 50%;
+            color: var(--primary-brown);
+            font-size: 1.5rem;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px);
+            color: var(--white);
+            background: linear-gradient(135deg, var(--saffron), var(--gold));
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--primary-brown), var(--secondary-brown));
+            color: var(--white);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .footer-text {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--saffron), var(--gold));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(255, 153, 51, 0.3);
+            z-index: 99;
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(255, 153, 51, 0.4);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 350px;
+                height: 100vh;
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 2rem 0;
+                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+                transition: right 0.4s ease;
+                z-index: 1000;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links li {
+                margin: 1.5rem 0;
+            }
+
+            .nav-links a {
+                font-size: 1.3rem;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                padding: 10rem 1.5rem 4rem;
+                background-attachment: scroll;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-tagline {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2.3rem;
+            }
+
+            .section-container {
+                padding: 4rem 1.5rem;
+            }
+            
+            .product-container {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 9rem 1rem 3rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-tagline {
+                font-size: 1.3rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .logo i {
+                font-size: 1.5rem;
+            }
+            
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .contact-icon {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+            
+            .product-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animation for elements */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-utensils"></i> Chav Mayechi
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="fade-in">Chav Mayechi</h1>
+            <div class="hero-tagline fade-in delay-1">Homemade Maharashtrian Delights</div>
+            <p class="fade-in delay-1">Experience the authentic taste of <span class="highlight">Maharashtrian homemade delights</span>, crafted with traditional recipes passed down through generations. Every bite carries the warmth and love of a mother's touch.</p>
+            <div class="hero-marathi marathi-text fade-in delay-2">चव मायेची - आईच्या हाताचा गोडवा</div>
+            <a href="#products" class="cta-button fade-in delay-3">Explore Our Products</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section-container" id="about">
+        <h2 class="section-title fade-in">About Us</h2>
+        <div class="about-content">
+            <div class="about-text fade-in">
+                <p>At <strong>Chav Mayechi</strong>, we believe in preserving the authentic flavors of traditional Maharashtrian cuisine. Our journey began with a simple mission: to bring the taste of homemade food to every household, just like a mother prepares for her family.</p>
+                <p>Every product we create is made with pure, natural ingredients, without any preservatives or artificial additives. We follow traditional recipes that have been passed down through generations, ensuring that each bite carries the essence of our rich culinary heritage.</p>
+                <div class="marathi-text-box marathi-text">
+                    आमच्या "चव मायेची" मध्ये, आम्ही पारंपरिक महाराष्ट्रीयन पाककृतीचा सांभाळ करतो. प्रत्येक गोडवा आईच्या हाताचा, प्रेमाने केलेला. शुद्ध, नैसर्गिक साहित्य वापरून, कोणत्याही कृत्रिम रसायनांशिवाय तयार केलेले स्वादिष्ट लाडू.
+                </div>
+            </div>
+            <div class="about-image fade-in delay-1">
+                <img src="logo.png" alt="Traditional Maharashtrian Food Preparation">
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section" id="products">
+        <div class="section-container">
+            <h2 class="section-title fade-in">Our Products</h2>
+            <div class="product-container">
+                <!-- Product 1 -->
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <img src="Methi_laddu.png" alt="Methi Laddu">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Methi Laddu</h3>
+                        <p class="product-price">₹600 <span>/kg</span></p>
+                        <p class="product-description">Fenugreek laddus with jaggery, ghee and nuts. Rich in iron and fiber, these laddus are both nutritious and delicious.</p>
+                        <a href="https://wa.me/918552924273?text=Hi! I'm interested in ordering Methi Laddu" target="_blank" class="order-btn">Order Now</a>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card fade-in delay-1">
+                    <div class="product-image">
+                        <img src="Nachani_laddu.png" alt="Nachani Laddu">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Nachani Laddu</h3>
+                        <p class="product-price">₹500 <span>/kg</span></p>
+                        <p class="product-description">Ragi laddus with jaggery and dry fruits. Packed with calcium and antioxidants, perfect for all ages.</p>
+                        <a href="https://wa.me/918552924273?text=Hi! I'm interested in ordering Nachani Laddu" target="_blank" class="order-btn">Order Now</a>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card fade-in delay-2">
+                    <div class="product-image">
+                        <img src="Dryfruit.png" alt="Dryfruit Laddu">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Dryfruit Laddu</h3>
+                        <p class="product-price">₹1150 <span>/kg</span></p>
+                        <p class="product-description">Nutritious laddus with assorted dry fruits including almonds, cashews, walnuts and pistachios.</p>
+                        <a href="https://wa.me/918552924273?text=Hi! I'm interested in ordering Dryfruit Laddu" target="_blank" class="order-btn">Order Now</a>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card fade-in delay-1">
+                    <div class="product-image">
+                        <img src="Khajur.png" alt="Khajur Laddu">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Khajur Laddu</h3>
+                        <p class="product-price">₹350 <span>/kg</span></p>
+                        <p class="product-description">Date laddus with nuts and seeds. Naturally sweetened with dates, rich in fiber and energy.</p>
+                        <a href="https://wa.me/918552924273?text=Hi! I'm interested in ordering Khajur Laddu" target="_blank" class="order-btn">Order Now</a>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card fade-in delay-2">
+                    <div class="product-image">
+                        <img src="Besan.png" alt="Besan Laddu">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Besan Laddu</h3>
+                        <p class="product-price">₹500 <span>/kg</span></p>
+                        <p class="product-description">Gram flour laddus with ghee and sugar. Traditional favorite with aromatic cardamom flavor.</p>
+                        <a href="https://wa.me/918552924273?text=Hi! I'm interested in ordering Besan Laddu" target="_blank" class="order-btn">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section-container" id="contact">
+        <h2 class="section-title fade-in">Contact Us</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item clickable fade-in" onclick="window.location.href='#contact'">
+                    <div class="contact-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Name</h3>
+                        <p>Aditi Ashok Zolage</p>
+                    </div>
+                </div>
+
+                <div class="contact-item clickable fade-in delay-1" onclick="window.open('https://wa.me/918552924273', '_blank')">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>WhatsApp</h3>
+                        <a href="https://wa.me/918552924273" target="_blank">+91 8552924273</a>
+                    </div>
+                </div>
+
+                <div class="contact-item clickable fade-in delay-2" onclick="window.location.href='mailto:chavmayechifoods@gmail.com'">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Email</h3>
+                        <a href="mailto:chavmayechifoods@gmail.com">chavmayechifoods@gmail.com</a>
+                    </div>
+                </div>
+
+                <div class="contact-item clickable fade-in delay-1" onclick="window.open('https://www.instagram.com/chavmaychi_foods?igsh=dW0zNDE5ZTQ4bHdq', '_blank')">
+                    <div class="contact-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Instagram</h3>
+                        <a href="https://www.instagram.com/chavmaychi_foods?igsh=dW0zNDE5ZTQ4bHdq" target="_blank">@chavmaychi_foods</a>
+                    </div>
+                </div>
+                
+                <div class="social-links fade-in delay-2">
+                    <a href="https://wa.me/918552924273" target="_blank" class="social-link">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="mailto:chavmayechifoods@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://www.instagram.com/chavmaychi_foods?igsh=dW0zNDE5ZTQ4bHdq" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="tel:+918552924273" class="social-link">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-image fade-in delay-2">
+                <img src="image.png" alt="Contact Chav Mayechi">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">Chav Mayechi</div>
+            <div class="footer-text">Homemade Maharashtrian delights crafted with traditional recipes, pure ingredients, and a mother's love. Experience the authentic taste of Maharashtra in every bite.</div>
+            <div class="copyright">© 2026 Chav Mayechi | Homemade with Love ❤️ | मायेची चव</div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <script>
+        // Mobile menu toggle functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking on a link
+        const navItems = document.querySelectorAll('.nav-links a');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Navbar background change on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            const backToTop = document.getElementById('backToTop');
+            
+            if (window.scrollY > 50) {
+                navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 5px 20px rgba(139, 69, 19, 0.15)';
+            } else {
+                navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = '0 2px 15px rgba(139, 69, 19, 0.1)';
+            }
+            
+            // Show/hide back to top button
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Clickable contact items
+        document.querySelectorAll('.contact-item.clickable').forEach(item => {
+            item.addEventListener('click', function() {
+                // The onclick attribute already handles the navigation
+                // This is just for visual feedback
+                this.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+        });
+        
+        // Animate elements on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.fade-in');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        };
+        
+        // Initialize animation on load
+        window.addEventListener('load', () => {
+            // Add active class to initially visible elements
+            const initiallyVisible = document.querySelectorAll('.fade-in');
+            initiallyVisible.forEach((el, index) => {
+                if (index < 3) el.classList.add('active');
+            });
+            
+            // Run scroll animation
+            animateOnScroll();
+        });
+        
+        // Run animation on scroll
+        window.addEventListener('scroll', animateOnScroll);
+        
+        // Order button functionality
+        document.querySelectorAll('.order-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                // For demo purposes - in a real site this would redirect to order page
+                // or open a modal
+                e.preventDefault();
+                
+                const productName = this.closest('.product-card').querySelector('.product-name').textContent;
+                const whatsappUrl = `https://wa.me/918552924273?text=Hi! I would like to order ${encodeURIComponent(productName)} from Chav Mayechi`;
+                
+                // Open WhatsApp in new tab
+                window.open(whatsappUrl, '_blank');
+            });
+        });
+        
+        // Handle image loading errors - fallback to placeholder
+        document.querySelectorAll('.product-image img').forEach(img => {
+            img.addEventListener('error', function() {
+                console.log('Image failed to load:', this.src);
+                // If local image fails, use a placeholder
+                if (this.src.includes('Methi_laddu.png') || this.src.includes('Nachani_laddu.png')) {
+                    this.src = 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
