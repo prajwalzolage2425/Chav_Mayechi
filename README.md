@@ -5,8 +5,6 @@
 
 ---
 
-## 📱 Website Preview
-![Chav Mayechi Website](https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80)
 
 ## 🚀 Quick Access
 Visit the live site: **[chavmayechi.netlify.app](https://chavmayechi.netlify.app/)**
